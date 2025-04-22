@@ -21,7 +21,12 @@ from reportlab.pdfgen import canvas
 import chardet
 import pytesseract
 import time
-
+st.set_page_config(
+    page_title="SummarAIze",
+    page_icon="circular_logo.png",
+    layout="wide",
+    initial_sidebar_state="expanded"
+)
 pytesseract.pytesseract.tesseract_cmd = r'C:\Program Files\Tesseract-OCR\tesseract.exe'  # Windows example
 
 # Register Arabic font for PDF generation
@@ -42,12 +47,7 @@ def format_arabic(text):
         return text
 
 # Set page config with dark theme
-st.set_page_config(
-    page_title="SummarAIze",
-    page_icon="circular_logo.png",
-    layout="wide",
-    initial_sidebar_state="expanded"
-)
+
 
 @st.cache_resource
 def load_model():
